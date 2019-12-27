@@ -2,11 +2,11 @@
 
 # List versions of PHP installed on your OS
 PHP_VERSIONS_INSTALLED=(
-  7.0
-  7.1
-  7.2
-  7.3
-  7.4
+  "7.0"
+  "7.1"
+  "7.2"
+  "7.3"
+  "7.4"
 );
 
 # Parameter #1 represents PHP version to be set

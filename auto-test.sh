@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Define color
-GREEN='\033[0;32m'
+GREEN="\033[0;32m"
 # Define no-color
-NC='\033[0m'
+NC="\033[0m"
 
 # Print message
 echo -e "${GREEN}Started auto-test shell script${NC}\n"
@@ -12,13 +12,13 @@ echo -e "${GREEN}Started auto-test shell script${NC}\n"
 echo -e "${GREEN}Finished PHP_CodeSniffer for custom files${NC}"
 
 # Run coding standard for src folder
-vendor/bin/phpcs src/ --standard='ruleset.xml' --colors
+vendor/bin/phpcs src/ --standard="ruleset.xml" --colors
 
 # Print message
 echo -e "${GREEN}Finished PHP_CodeSniffer for src folder${NC}"
 
 # Run coding standard for tests folder
-vendor/bin/phpcs tests/ --standard='ruleset.xml' --colors
+vendor/bin/phpcs tests/ --standard="ruleset.xml" --colors
 
 # Print message
 echo -e "${GREEN}Finished PHP_CodeSniffer for tests folder${NC}"
