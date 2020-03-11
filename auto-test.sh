@@ -2,6 +2,14 @@
 
 ################################################################################
 
+# Globals
+SCRIPT_NAME="`basename $(readlink -f $0)`"
+SCRIPT_DIR="`dirname $(readlink -f $0)`"
+ROOT_DIR="$SCRIPT_DIR/.."
+VENDOR_DIR="$ROOT_DIR/vendor/"
+
+################################################################################
+
 # Print message in certain manner
 #
 # @param PHP_VERSION
@@ -50,27 +58,30 @@ function php_switch() {
 # Switch PHP version if first param is set
 if [ -n "$1" ];
 then
+  print_message "Switching to PHP version ${1}"
   php_switch $1
 fi
 
 # Start script
-print_message "Started auto-test shell script"
+print_message "Started ${SCRIPT_NAME}"
 
 # Run coding standard for src folder
-vendor/bin/phpcs src/ --standard="ruleset.xml" --colors
+"${VENDOR_DIR}/bin/phpcs" "${ROOT_DIR}/src/" --standard="${ROOT_DIR}/ruleset.xml" --colors
 print_message "Finished PHP_CodeSniffer for src folder"
 
 # Run coding standard for tests folder
-vendor/bin/phpcs tests/ --standard="ruleset.xml" --colors
+"${VENDOR_DIR}/bin/phpcs" "${ROOT_DIR}/tests/" --standard="${ROOT_DIR}/ruleset.xml" --colors
 print_message "Finished PHP_CodeSniffer for tests folder"
 
 # Run PHP static analysis
-vendor/bin/phpstan analyse src --level max
+"${VENDOR_DIR}/bin/phpstan" analyse "${ROOT_DIR}/src/" --level max
 print_message "Finished PHPStan for src folder"
 
 # Run PHPUnit
-vendor/bin/phpunit
+"${VENDOR_DIR}/bin/phpunit"
 print_message "Finished PHPUnit for test folder"
 
 # End script
-print_message "Finished auto-test shell script"
+print_message "Finished ${SCRIPT_NAME}"
+
+################################################################################
