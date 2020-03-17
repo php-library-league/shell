@@ -10,12 +10,14 @@ PHP_EXTENSIONS=(
   "mysql"
   "sqlite3"
   "gd"
-);
+)
 
 # Parameter #1 represents PHP version to be set
-PHP_VERSION=$1;
+PHP_VERSION=$1
 
 for extension in ${PHP_EXTENSIONS[*]}
 do
-  sudo apt-get install php${PHP_VERSION}-${extension};
+  sudo apt-get install php${PHP_VERSION}-${extension}
 done
+
+sudo service apache2 restart

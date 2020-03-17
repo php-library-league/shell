@@ -12,7 +12,7 @@ VENDOR_DIR="$ROOT_DIR/vendor/"
 
 # Print message in certain manner
 #
-# @param PHP_VERSION
+# @param MESSAGE_CONTENT
 #
 function print_message() {
   # Define color
@@ -37,6 +37,9 @@ function php_switch() {
 
   # List versions of PHP installed on your OS
   PHP_VERSIONS_ALLOWED=(
+    "5.6"
+    "7.0"
+    "7.1"
     "7.2"
     "7.3"
     "7.4"
@@ -56,7 +59,7 @@ function php_switch() {
 ################################################################################
 
 # Switch PHP version if first param is set
-if [ -n "$1" ];
+if [ -n "$1" ]
 then
   print_message "Switching to PHP version ${1}"
   php_switch $1
