@@ -9,7 +9,8 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 # List of available scripts
 
 1. [Auto Test]
-2. [PHP Extensions]
+1. [PHP Extensions]
+1. [Outsource Install]
 
 ## Auto Test
 
@@ -36,6 +37,8 @@ If you're going to switch between multiple versions of PHP, please update `PHP_V
 bash shell/auto-test.sh 7.4
 ```
 
+[⬆ back to top](#list-of-available-scripts)
+
 ## PHP Extensions
 
 * File: php-extensions.sh
@@ -57,7 +60,23 @@ You'll have to pass PHP version as an argument.
 bash shell/php-extensions.sh 7.4
 ```
 
+[⬆ back to top](#list-of-available-scripts)
+
+## Outsource Install
+
+* File: outsource-install.sh
+* Description: Install outsource folder for PHP Library
+* Requirements: Composer installed on OS
+
+```bash
+# Run from root
+bash shell/outsource-install.sh
+```
+
+[⬆ back to top](#list-of-available-scripts)
+
 [Auto Test]: README.md#auto-test
 [PHP Extensions]: README.md#php-extensions
+[Outsource Install]: README.md#outsource-install
 [outsource folder]: https://github.com/php-library-league/outsource
 [PHP Library]: https://github.com/90zlaya/php-library
