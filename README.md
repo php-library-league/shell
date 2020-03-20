@@ -8,9 +8,9 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 
 # List of available scripts
 
-1. [Auto Test]
-1. [PHP Extensions]
-1. [Outsource Install]
+1. [Auto Test](#auto-test)
+1. [PHP Extensions](#php-extensions)
+1. [Outsource Install](#outsource-install)
 
 ## Auto Test
 
@@ -75,8 +75,5 @@ bash shell/outsource-install.sh
 
 [⬆ back to top](#list-of-available-scripts)
 
-[Auto Test]: README.md#auto-test
-[PHP Extensions]: README.md#php-extensions
-[Outsource Install]: README.md#outsource-install
 [outsource folder]: https://github.com/php-library-league/outsource
 [PHP Library]: https://github.com/90zlaya/php-library
