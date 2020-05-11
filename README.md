@@ -12,7 +12,7 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 1. [PHP Extensions](#php-extensions)
 1. [Outsource Install](#outsource-install)
 
-## 1. Auto Test
+## Auto Test
 
 * File: auto-test.sh
 * Description: Run automatic tests
@@ -39,7 +39,7 @@ bash shell/auto-test.sh 7.4
 
 [⬆ back to top](#list-of-available-scripts)
 
-## 2. PHP Extensions
+## PHP Extensions
 
 * File: php-extensions.sh
 * Description: Install necessary PHP extensions for PHP Library
@@ -62,7 +62,7 @@ bash shell/php-extensions.sh 7.4
 
 [⬆ back to top](#list-of-available-scripts)
 
-## 3. Outsource Install
+## Outsource Install
 
 * File: outsource-install.sh
 * Description: Install outsource folder for PHP Library
