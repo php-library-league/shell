@@ -1,6 +1,15 @@
 #!/bin/bash
 
 ################################################################################
+# Script name : auto-test.sh
+# Description : Run automatic tests 
+# Arguments   : PHP_VERSION (optional)
+# Author      : 90zlaya
+# Email       : contact@zlatanstajic.com
+# Licence     : MIT
+################################################################################
+
+################################################################################
 
 # Globals
 SCRIPT_NAME="`basename $(readlink -f $0)`"

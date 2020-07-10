@@ -1,5 +1,17 @@
 #!/bin/bash
 
+################################################################################
+# Script name : php-extensions.sh
+# Description : Install PHP extensions
+# Arguments   : PHP_VERSION
+# Author      : 90zlaya
+# Email       : contact@zlatanstajic.com
+# Licence     : MIT
+################################################################################
+
+# Parameter #1 represents PHP version to be set
+PHP_VERSION=$1
+
 # List of PHP extensions
 PHP_EXTENSIONS=(
   "mbstring"
@@ -11,9 +23,6 @@ PHP_EXTENSIONS=(
   "sqlite3"
   "gd"
 )
-
-# Parameter #1 represents PHP version to be set
-PHP_VERSION=$1
 
 for extension in ${PHP_EXTENSIONS[*]}
 do

@@ -4,7 +4,7 @@ This repository represents shell scripts for [PHP Library].
 
 # How to run
 
-Clone this repository to the root of PHP Library. Before running certain shell script, check *description* and *requirements*. Some of the scripts are meant to be used only from root of PHP Library.
+Clone this repository to the root of PHP Library. Before running certain shell script, check *description* and *requirements*. Some of the scripts are meant to be used only from the root of PHP Library.
 
 # List of available scripts
 
@@ -15,6 +15,7 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 ## Auto Test
 
 * File: auto-test.sh
+* Arguments: Optional
 * Description: Run automatic tests
 * Requirements: Composer vendors updated and [outsource folder] downloaded and unzipped
 
@@ -42,6 +43,7 @@ bash shell/auto-test.sh 7.4
 ## PHP Extensions
 
 * File: php-extensions.sh
+* Arguments: Required
 * Description: Install necessary PHP extensions for PHP Library
 * Requirements: Installed version of PHP to be passed as an argument
 
@@ -65,12 +67,20 @@ bash shell/php-extensions.sh 7.4
 ## Outsource Install
 
 * File: outsource-install.sh
+* Arguments: Optional
 * Description: Install outsource folder for PHP Library
 * Requirements: Composer installed on OS
 
 ```bash
 # Run from root
 bash shell/outsource-install.sh
+```
+
+Optionally you may pass version of outsource repository. Be careful when doing this one!
+
+```bash
+# Example for running from root for version 1.1.0
+bash shell/php-extensions.sh 1.1.0
 ```
 
 [⬆ back to top](#list-of-available-scripts)
