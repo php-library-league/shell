@@ -1,23 +1,23 @@
 # Shell
 
-This repository represents shell scripts for [PHP Library].
+This repo represents [PHP Library](https://github.com/90zlaya/php-library) shell scripts.
 
-# How to run
+## How to Run
 
 Clone this repository to the root of PHP Library. Before running certain shell script, check *description* and *requirements*. Some of the scripts are meant to be used only from the root of PHP Library.
 
-# List of available scripts
+## List of Available Scripts
 
-1. [Auto Test](#auto-test)
-1. [PHP Extensions](#php-extensions)
-1. [Outsource Install](#outsource-install)
+* [Auto Test](#auto-test)
+* [PHP Extensions](#php-extensions)
+* [Outsource Install](#outsource-install)
 
-## Auto Test
+### Auto Test
 
 * File: auto-test.sh
-* Arguments: Optional
+* Arguments: php-version (optional)
 * Description: Run automatic tests
-* Requirements: Composer vendors updated and [outsource folder] downloaded and unzipped
+* Requirements: Composer vendors updated and [outsource repository](https://github.com/php-library-league/outsource) downloaded and unzipped
 
 ```bash
 # Run from root
@@ -40,10 +40,10 @@ bash shell/auto-test.sh 7.4
 
 [⬆ back to top](#list-of-available-scripts)
 
-## PHP Extensions
+### PHP Extensions
 
 * File: php-extensions.sh
-* Arguments: Required
+* Arguments: php-version
 * Description: Install necessary PHP extensions for PHP Library
 * Requirements: Installed version of PHP to be passed as an argument
 
@@ -64,12 +64,12 @@ bash shell/php-extensions.sh 7.4
 
 [⬆ back to top](#list-of-available-scripts)
 
-## Outsource Install
+### Outsource Install
 
 * File: outsource-install.sh
-* Arguments: Optional
+* Arguments: main-version (optional)
 * Description: Install outsource folder for PHP Library
-* Requirements: Composer installed on OS
+* Requirements: Composer installed on machine
 
 ```bash
 # Run from root
@@ -84,6 +84,3 @@ bash shell/php-extensions.sh 1.1.0
 ```
 
 [⬆ back to top](#list-of-available-scripts)
-
-[outsource folder]: https://github.com/php-library-league/outsource
-[PHP Library]: https://github.com/90zlaya/php-library
