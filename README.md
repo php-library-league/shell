@@ -4,7 +4,7 @@ This repo represents [PHP Library](https://github.com/90zlaya/php-library) shell
 
 ## How to Run
 
-Clone this repository to the root of PHP Library. Before running certain shell script, check *description* and *requirements*. Some of the scripts are meant to be used only from the root of PHP Library.
+Clone this repository to the root of PHP Library. Before running certain shell script, consult documentation. 
 
 ## List of Available Scripts
 
@@ -14,51 +14,40 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 
 ### Auto Test
 
-* File: auto-test.sh
-* Arguments: php-version (optional)
+* File: [auto-test.sh](auto-test.sh)
+* Arguments: None
 * Description: Run automatic tests
 * Requirements: Composer vendors updated and [outsource repository](https://github.com/php-library-league/outsource) downloaded and unzipped
 
 ```bash
-# Run from root
+# Get help
+bash shell/auto-test.sh -h
+
+# Run script
 bash shell/auto-test.sh
-```
-
-If you want to test with multiple PHP versions, you may pass optional argument to the script.
-
-```bash
-# Run from root for specific PHP version
-bash shell/auto-test.sh <php-version>
-```
-
-If you're going to switch between multiple versions of PHP, please update `PHP_VERSIONS_ALLOWED` variable with list versions of PHP installed on your OS.
-
-```bash
-# Example for running from root for PHP 7.4
-bash shell/auto-test.sh 7.4
 ```
 
 [⬆ back to top](#list-of-available-scripts)
 
 ### PHP Extensions
 
-* File: php-extensions.sh
+* File: [php-extensions.sh](php-extensions.sh)
 * Arguments: php-version
 * Description: Install necessary PHP extensions for PHP Library
 * Requirements: Installed version of PHP to be passed as an argument
 
 ```bash
-# Run from root
-bash shell/php-extensions.sh <php-version>
+# Get help
+bash shell/php-extensions.sh -h
 
-# Run directly
-bash php-extensions.sh <php-version>
+# Run script
+bash shell/php-extensions.sh <php-version>
 ```
 
 You'll have to pass PHP version as an argument.
 
 ```bash
-# Example for running from root for PHP 7.4
+# Example how to runn script for PHP 7.4
 bash shell/php-extensions.sh 7.4
 ```
 
@@ -66,21 +55,24 @@ bash shell/php-extensions.sh 7.4
 
 ### Outsource Install
 
-* File: outsource-install.sh
+* File: [outsource-install.sh](outsource-install.sh)
 * Arguments: main-version (optional)
 * Description: Install outsource folder for PHP Library
 * Requirements: Composer installed on machine
 
 ```bash
-# Run from root
+# Get help
+bash shell/outsource-install.sh -h
+
+# Run script
 bash shell/outsource-install.sh
 ```
 
-Optionally you may pass version of outsource repository. Be careful when doing this one!
+Optionally you may pass version of outsource repository.
 
 ```bash
-# Example for running from root for version 1.1.0
-bash shell/php-extensions.sh 1.1.0
+# Example how to runn script for version 1.1.0
+bash shell/outsource-install.sh 1.1.0
 ```
 
 [⬆ back to top](#list-of-available-scripts)
