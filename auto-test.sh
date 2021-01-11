@@ -3,97 +3,83 @@
 ################################################################################
 # Script name : auto-test.sh
 # Description : Run automatic tests 
-# Arguments   : PHP_VERSION (optional)
+# Arguments   : /
 # Author      : 90zlaya
 # Email       : contact@zlatanstajic.com
 # Licence     : MIT
 ################################################################################
 
 ################################################################################
-
 # Globals
+################################################################################
+
 SCRIPT_NAME="`basename $(readlink -f $0)`"
 SCRIPT_DIR="`dirname $(readlink -f $0)`"
 ROOT_DIR="$SCRIPT_DIR/.."
 VENDOR_DIR="$ROOT_DIR/vendor/"
 
 ################################################################################
+# Show help
+################################################################################
 
-# Print message in certain manner
-#
-# @param MESSAGE_CONTENT
-#
-function print_message() {
-  # Define color
-  GREEN="\033[0;32m"
-  # Define no-color
-  NC="\033[0m"
-  # Parameter #1 represents message sting to be printed
-  MESSAGE_CONTENT=$1
-
-  echo -e "${GREEN}${MESSAGE_CONTENT}${NC}"
+Help()
+{
+  echo ""
+  echo -e "\e[1mRunning $SCRIPT_NAME\e[0m"
+  echo "Description: Run automatic tests"
+  echo ""
+  echo "Show this help      : $SCRIPT_NAME -h"
+  echo "Run automatic tests : $SCRIPT_NAME"
+  echo ""
 }
 
 ################################################################################
+# Getting parameters
+################################################################################
 
-# Switch version of PHP
-#
-# @param PHP_VERSION
-#
-function php_switch() {
-  # Parameter #1 represents PHP version to be set
-  PHP_VERSION=$1
-
-  # List versions of PHP installed on your OS
-  PHP_VERSIONS_ALLOWED=(
-    "5.6"
-    "7.0"
-    "7.1"
-    "7.2"
-    "7.3"
-    "7.4"
-  )
-
-  for version in ${PHP_VERSIONS_ALLOWED[*]}
-  do
-    sudo a2dismod php${version}
-  done
-
-  sudo update-alternatives --set php /usr/bin/php${PHP_VERSION}
-  sudo a2enmod php${PHP_VERSION}
-  sudo service apache2 restart
-  php --version
+GetParameters()
+{
+  if [ $# -eq 1 ]
+  then
+    if [ "x$1" = "x-h" ]
+    then
+      Help
+      End 0
+    fi
+  fi
 }
 
 ################################################################################
+# Shell terminates
+################################################################################
 
-# Switch PHP version if first param is set
-if [ -n "$1" ]
-then
-  print_message "Switching to PHP version ${1}"
-  php_switch $1
-fi
+End()
+{
+  if [ $1 -eq 0 ]
+  then
+    echo "Script $SCRIPT_NAME finishing OK"
+    echo ""
+    exit 0
+  else
+    echo -e "Script $SCRIPT_NAME finishing with \e[1mERROR [$2]\e[0m"
+    echo ""
+    exit 1
+  fi
+}
 
-# Start script
-print_message "Started ${SCRIPT_NAME}"
+################################################################################
+# Executing all
+################################################################################
 
-# Run coding standard for src folder
-"${VENDOR_DIR}/bin/phpcs" "${ROOT_DIR}/src/" --standard="${ROOT_DIR}/ruleset.xml" --colors
-print_message "Finished PHP_CodeSniffer for src folder"
+echo ""
+echo "Script $SCRIPT_NAME starting..."
 
-# Run coding standard for tests folder
-"${VENDOR_DIR}/bin/phpcs" "${ROOT_DIR}/tests/" --standard="${ROOT_DIR}/ruleset.xml" --colors
-print_message "Finished PHP_CodeSniffer for tests folder"
+GetParameters $@
 
-# Run PHP static analysis
-"${VENDOR_DIR}/bin/phpstan" analyse "${ROOT_DIR}/src/" --level max
-print_message "Finished PHPStan for src folder"
+composer run phpcs
+composer run phpstan
+composer run phpunit
 
-# Run PHPUnit
-"${VENDOR_DIR}/bin/phpunit"
-print_message "Finished PHPUnit for test folder"
-
-# End script
-print_message "Finished ${SCRIPT_NAME}"
+End 0
 
 ################################################################################
