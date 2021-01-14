@@ -87,8 +87,6 @@ unzip "${MAIN_VERSION}.zip" && rm -rf "${MAIN_VERSION}.zip"
 mv "${FOLDER_NAME}-${MAIN_VERSION}/" "${FOLDER_NAME}/"
 unzip "${FOLDER_NAME}/${ARCHIVE_NAME}.zip" -d "${FOLDER_NAME}/"
 chmod -R 0777 "${FOLDER_NAME}/"
-composer update
-composer run phpunit
 
 End 0
 
