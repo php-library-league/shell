@@ -40,7 +40,7 @@ Help()
   echo "Description: Install necessary PHP extensions for PHP Library"
   echo ""
   echo "Show this help     : $SCRIPT_NAME -h"
-  echo "Install extensions : $SCRIPT_NAME <php-version>"
+  echo "Install extensions : $SCRIPT_NAME [php-version]"
   echo ""
 }
 

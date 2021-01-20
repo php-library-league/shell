@@ -31,7 +31,7 @@ Help()
   echo ""
   echo "Show this help                   : $SCRIPT_NAME -h"
   echo "Install default outsource folder : $SCRIPT_NAME"
-  echo "Install version outsource folder : $SCRIPT_NAME <main-version>"
+  echo "Install version outsource folder : $SCRIPT_NAME [main-version]"
   echo ""
 }
 

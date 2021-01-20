@@ -41,7 +41,7 @@ bash shell/auto-test.sh
 bash shell/php-extensions.sh -h
 
 # Run script
-bash shell/php-extensions.sh <php-version>
+bash shell/php-extensions.sh [php-version]
 ```
 
 You'll have to pass PHP version as an argument.
