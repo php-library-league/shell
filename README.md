@@ -17,7 +17,7 @@ Clone this repository to the root of PHP Library. Before running certain shell s
 * File: [auto-test.sh](auto-test.sh)
 * Arguments: None
 * Description: Run automatic tests
-* Requirements: Composer vendors updated and [outsource repository](https://github.com/php-library-league/outsource) downloaded and unzipped
+* Requirements: Composer vendors updated and [outsource folder](https://github.com/php-library-league/outsource) downloaded and unzipped
 
 ```bash
 # Get help
@@ -68,7 +68,7 @@ bash shell/outsource-install.sh -h
 bash shell/outsource-install.sh
 ```
 
-Optionally you may pass version of outsource repository.
+Optionally you may pass version of outsource folder.
 
 ```bash
 # Example how to runn script for version 1.1.0
